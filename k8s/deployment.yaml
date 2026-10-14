@@ -1,0 +1,20 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubedemoapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kubedemoapp
+  template:
+    metadata:
+      labels:
+        app: kubedemoapp
+    spec:
+      containers:
+        - name: kubedemoapp
+          image: bhavagna12345/kubedemoapp:latest
+          ports:
+            - containerPort: 5000
